@@ -10,6 +10,7 @@ import Loginadmin from './Pages/Loginadmin';
 import Dashbaord1 from './Pages/Dashboardadmin';
 import Members from './Pages/Members';
 import Deptadmin from './Pages/Deptadmin';
+import Sidebaradmin from './Pages/Sidebaradmin';
 function App() {
   return (
     <div >
@@ -21,6 +22,7 @@ function App() {
           <Route path='/Dashboardadmin' element={<Dashbaord1 />} />
           <Route path='/Members' element={<Members />} />
           <Route path='/Deptadmin' element={<Deptadmin />} />
+          <Route path='/Sidebaradmin' element={<Sidebaradmin />} />
           </Routes>
       </Router>
     </div>

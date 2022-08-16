@@ -58,16 +58,16 @@ export default function Register() {
          <div className="main"> 
         <div className="container-fluid regi">
             <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 register">
-            <div className="img2 col-lg-6">
+            <div className="img2 col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <img src="img5new.png" className="img-responsive img2" />
             </div>
-            <div className="col-lg-6 reg">
+            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 reg">
             <center>
-            <form className="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-10 col-md-10 col-sm-10 col-xs-10 login" onSubmit={handleform}>
+            <form className=" col-lg-10 col-md-10 col-sm-10 col-xs-10 login" onSubmit={handleform}>
                 <h3 className="text2">Registration for Society</h3>
             <div className="form-group frms">
             <div className="input-group">
-             <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span> 
+             <span className="input-group-addon glycol"><i className="glyphicon glyphicon-user"></i></span> 
              <input
                         type={'text'}
                         name="name"
@@ -77,7 +77,7 @@ export default function Register() {
             </div>
             <div className="form-group frms">
             <div className="input-group">
-             <span className="input-group-addon"><i className="	glyphicon glyphicon-education"></i></span>
+             <span className="input-group-addon glycol"><i className="	glyphicon glyphicon-education"></i></span>
              <input
                         type={'number'}
                         name="rollno"
@@ -87,14 +87,14 @@ export default function Register() {
             </div>
             <div className="form-group frms" >
             <div className="input-group">
-             <span className="input-group-addon"><i className="glyphicon glyphicon-envelope"></i></span> 
+             <span className="input-group-addon glycol"><i className="glyphicon glyphicon-envelope"></i></span> 
            <input type={'email'} name="email" placeholder="Email" className="form-control" required/>
            </div>
             </div>
 
             <div className="form-group frms">
             <div className="input-group">
-             <span className="input-group-addon"><i className="	glyphicon glyphicon-home"></i></span>
+             <span className="input-group-addon glycol"><i className="	glyphicon glyphicon-home"></i></span>
              <input
                         type={'text'}
                         name="branch"
@@ -104,7 +104,7 @@ export default function Register() {
             </div>
             <div className="form-group frms">
             <div className="input-group">
-             <span className="input-group-addon"><i className="glyphicon glyphicon-list-alt"></i></span>
+             <span className="input-group-addon glycol"><i className="glyphicon glyphicon-list-alt"></i></span>
              <input
                         type={'number'}
                         name="sem"
@@ -114,7 +114,7 @@ export default function Register() {
             </div>
             <div className="form-group frms">
             <div className="input-group">
-             <span className="input-group-addon"><i className="glyphicon glyphicon-earphone"></i></span>
+             <span className="input-group-addon glycol"><i className="glyphicon glyphicon-earphone"></i></span>
              <input
                         type={'tel'}
                         name="contact"
@@ -124,7 +124,7 @@ export default function Register() {
             </div>
             <div className="form-group frms">
             <div className="input-group">
-             <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
+             <span className="input-group-addon glycol"><i className="glyphicon glyphicon-user"></i></span>
              <select
                         name="gender" 
                         className="form-control">
@@ -135,7 +135,7 @@ export default function Register() {
             </div>
             <div className="form-group frms">
             <div className="input-group">
-             <span className="input-group-addon"><i className="glyphicon glyphicon-lock"></i></span>
+             <span className="input-group-addon glycol"><i className="glyphicon glyphicon-lock"></i></span>
              <input
                         type={'password'}
                         name="password"
@@ -144,7 +144,7 @@ export default function Register() {
             </div>
             </div>
             <div className="form-group">
-                <input type={'submit'} value="Register" className="btn btn-info sub"/>
+                <input type={'submit'} value="Register" className="btn btnn btn-info sub"/>
             </div>
             <h5 className="plz"><i>Already Registered?</i><Link to="/Login"> Login</Link></h5>
         </form>

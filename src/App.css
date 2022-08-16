@@ -7,6 +7,10 @@
 .navbar-header{
   background-color: aquamarine;
 }
+.glycol{
+  background-color: #bae1e1 !important;  
+color:#024858 !important;
+}
 .easy{
   font-family: gabriola;
   font-weight: bold;
@@ -17,7 +21,7 @@
   background-color: white;
 }
 .top{
-  background-color:#f1ce86 !important;
+  background-color:#f1d6a2 !important;
 }
 .text2{
   line-height: 50px !important;
@@ -46,6 +50,7 @@
 .imgs{
   border-radius: 25px;
 }
+
 .deptfrm{
   background-image:linear-gradient(#bae1e1,#c6eeed); 
 }
@@ -67,12 +72,35 @@
 }
 .add{
   float: right;
+  font-size: 18px !important;
+  margin: 1%;
+}
+.btndep{
+  float: left;
+  font-size: 18px !important;
+  margin: 1%;
+}
+.closd{
+  font-size: 18px !important;
 }
 .addept{
- font-size: 20px !important;
+  font-size: 18px !important;
+ background-color:#1c8f8d !important;
+}
+.form-control{
+  padding: 2% !important;
+font-size: 18px !important;
 }
 .plz{
   line-height: 30px !important;
+}
+.btnn{
+ background-color:#1c8f8d !important;
+ color: white !important;
+}
+.btnn:hover{
+  background-color: #87dbd9 !important;
+  color: black !important;
 }
 .sub{
   width: 100%;
@@ -99,6 +127,7 @@ td, th{
 .th{
   font-weight: bold;
 }
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

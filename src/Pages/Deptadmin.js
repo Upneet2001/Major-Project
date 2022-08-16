@@ -1,18 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from "react";
+import Sidebaradmin from './Sidebaradmin';
 
 export default function Deptadmin() {
     var uri= "http://localhost:1200/";
     function handleform(e){
         e.preventDefault();
-        var count=0;
         var data = new FormData(e.currentTarget);
-        var counter=count++;
-        console.log(count);
         var obj={
-            Sno : counter,
-            Department: data.get('departmentname'),
-            Society: data.get('society'),
+            Department: data.get('department')
         }
         axios.post(uri+'AddDepart', obj).then((succ) => {
             // console.log(succ.data);
@@ -24,10 +20,27 @@ export default function Deptadmin() {
             }
         })
     }
+   
+    function handleform1(e){
+        e.preventDefault();
+        var data = new FormData(e.currentTarget);
+        var obj={
+            Society: data.get('society')
+        }
+        axios.post(uri+'AddSociety', obj).then((succ) => {
+            if(succ.data == "ok"){
+                alert('Data Added');
+                getdata();
+                e.target.reset();
+                e.target.society.focus();
+            }
+        })
+    }
     const [data, setdata] = useState([]);
     function getdata(){
-        axios.get(uri+'getDepart').then((succ) => {
+        axios.get(uri+'getSociety').then((succ) => {
             setdata(succ.data);
+            console.log(succ.data);
         })
     }
     useEffect(() => {
@@ -36,7 +49,7 @@ export default function Deptadmin() {
 
     function del(x) {
         // alert(x);
-        axios.post(uri+'deletedept', {id:x}).then((succ) => {
+        axios.post(uri+'deleteSociety', {id:x}).then((succ) => {
             if(succ.data == "Deleted"){
                 alert('Deleted');
                 getdata();
@@ -44,25 +57,74 @@ export default function Deptadmin() {
         })
     }
   return (
+  <div>
+       <Sidebaradmin/>
     <div className="department">
-            <div className="container-fluid log">
-            <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 deptfrm frm">
-            <h1 className='text'>Add Department and Society name</h1>
-            <form className="col-lg-offset-2 col-md-offset-2 col-sm-offset-1 col-xs-offset-1 col-lg-8 
-            col-md-8 col-sm-10 col-xs-10 login " onSubmit={handleform}>
-        <div className="form-group frms">
-        <label>Add Department name</label>
-        <input type={"text"} name="departmentname" placeholder="Department Name" className="form-control" required />
-    </div>
+                        <div className="modal fade" id="mymodal" role="dialog">
+                            <div className="modal-dialog modal-md">
+                                <div className="modal-content deptfrm" >
+                                    <div className="modal-body">
+                                        <form onSubmit={handleform1}>
+                                            <div className="form-group frms">
+                                            <h3 style={{fontWeight:"bold", textAlign:"center"}}>Add Department and Society name</h3><br/>
+                                            <label>Select Department name</label>
+                                            <select name="departmentname" className="form-control">
+                                                    <option> </option>
+                                                </select>
+                                        </div>
 
-    <div className="form-group frms">
-        <label>Add Society name</label>
-        <input type={"text"} name="society" placeholder="Society" className="form-control" required/>
-    </div>
-    <div className="form-group add">
-         <input type={'submit'} value="Add" className=" addept btn btn-info"/>
-    </div>
-            </form>
+                                        <div className="form-group frms">
+                                            <label>Add Society name</label>
+                                            <input type={"text"} name="society" placeholder="Society" className="form-control" required/>
+                                        </div>
+                                        <div className="form-group add">
+                                            <input type={'submit'} value="Add" className="btn btn-info addept"/>
+                                        </div>
+                                                
+                                            <div className="form-group text-left">
+                                                <button type="button" className="btn btn-danger closd" data-dismiss="modal">Close</button>
+                                            
+                                            </div>
+                                            </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='modal fade' id="mymodal1" role="dialog">
+                            <div className='modal-dialog modal-md'>
+                                <div className='modal-content deptfrm'>
+                                    <div className='modal-body'>
+                                        <form  onSubmit={handleform}>
+                                            <div className="form-group frms">
+                                                <h3 style={{fontWeight:"bold", textAlign:"center"}}>Add Department name</h3><br/>
+                                               <input type={"text"} name="department" placeholder="Department Name"  className='form-control ' required/>
+ 
+                                            </div>
+                                            <div className="form-group add">
+                                            <input type={'submit'} value="Add" className="btn btn-info addept"/>
+                                        </div>
+                                            
+                                            <div className="form-group text-left">
+                                                <button type="button" className="btn btn-danger closd" data-dismiss="modal">Close</button>
+                                            
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+            
+            <div className="container-fluid deptadmin">
+            <div className="col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
+         
+            <h1 className='text'><span><button className="btn btnn btn-info btndep" data-toggle="modal" data-target="#mymodal1">
+                            <span className="glyphicon glyphicon-plus"></span> Add New Department
+                        </button></span>List of Societies<span><button className="btn btnn btn-info add" data-toggle="modal" data-target="#mymodal">
+                            <span className="glyphicon glyphicon-plus"></span> Add New Society
+                        </button></span></h1>
+           
             <div className="container-fluid">
             <table className="table table-hover">
             
@@ -94,6 +156,6 @@ export default function Deptadmin() {
     </div>
     </div>
     </div>
-    
+    </div>  
   )
 }

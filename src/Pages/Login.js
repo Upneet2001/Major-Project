@@ -22,7 +22,7 @@ export default function Login() {
     
 
   return (
-    <div>
+    <div >
     <div className="main"> 
         <div className="container-fluid log">
             <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 frm">
@@ -30,13 +30,13 @@ export default function Login() {
             <img src="img1.jpg" className="img-responsive imgs" />
             </div>
             <center>
-            <form className="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-10 col-md-10 col-sm-10 col-xs-10 login" onSubmit={handleform}>
+            <form className="col-lg-offset-1 col-md-offset-1 col-sm-offset-0 col-xs-offset-0 col-lg-10 col-md-10 col-sm-12 col-xs-12 login" onSubmit={handleform}>
                 <h1 className="text">Login</h1>
-                <h4 className="plz">Please Enter Your E-mail and Password!</h4><br/>
+                <h4 className="plz">Please Enter Your Roll no. and Password!</h4><br/>
             
             <div className="form-group frms" >
-            <div className="input-group">
-             <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span> 
+            <div className="input-group ">
+             <span className="input-group-addon glycol "><i className="glyphicon glyphicon-user "></i></span> 
            <input type={'text'} name="rollno" placeholder="College Roll no." className="form-control" required/>
            </div>
             </div>
@@ -44,12 +44,12 @@ export default function Login() {
 
             <div className="form-group frms">
             <div className="input-group">
-             <span className="input-group-addon"><i className="glyphicon glyphicon-lock"></i></span>
+             <span className="input-group-addon glycol"><i className="glyphicon glyphicon-lock "></i></span>
             <input type={'password'} name="password" placeholder="Password" className="form-control" required />
             </div>
             </div>
             <div className="form-group">
-                <input type={'submit'} value="Login" className="btn btn-info sub"/>
+                <input type={'submit'} value="Login" className="btn btnn btn-default sub"/>
             </div>
             <h5 className="plz"><i>Don't have an account?</i><Link to="/Register"> Register</Link></h5>
         </form>
