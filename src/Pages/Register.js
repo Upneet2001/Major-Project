@@ -52,7 +52,7 @@ export default function Register() {
             }
         })
     }
-
+    const [show, setshow] = useState(true);
     return (
         <>
          <div className="main"> 
@@ -136,15 +136,27 @@ export default function Register() {
             <div className="form-group frms">
             <div className="input-group">
              <span className="input-group-addon glycol"><i className="glyphicon glyphicon-lock"></i></span>
-             <input
-                        type={'password'}
+                        <input
+                        type={show ? ('password'): ('text')} 
                         name="password"
                         placeholder="Password"
                         className="form-control" required />
-            </div>
+                        <div className="input-group-btn">
+                       { show ? (
+                        <i type={'button'} onClick={() => setshow(false)} className="glyphicon glyphicon-eye-open btn btn-default eye">
+                        </i>
+                        ) : (
+                        <i type={'button'} onClick={() => setshow(true)} className="btn glyphicon glyphicon-eye-close  btn btn-default eye">
+                        </i>
+                        )
+                       }
+                        <div/>
+                        </div>
+                        </div>
             </div>
             <div className="form-group">
                 <input type={'submit'} value="Register" className="btn btnn btn-info sub"/>
+                
             </div>
             <h5 className="plz"><i>Already Registered?</i><Link to="/Login"> Login</Link></h5>
         </form>

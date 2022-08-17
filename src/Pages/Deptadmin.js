@@ -62,8 +62,8 @@ export default function Deptadmin() {
     <div className="department">
                         <div className="modal fade" id="mymodal" role="dialog">
                             <div className="modal-dialog modal-md">
-                                <div className="modal-content deptfrm" >
-                                    <div className="modal-body">
+                                <div className="modal-content " >
+                                    <div className="modal-body deptfrm">
                                         <form onSubmit={handleform1}>
                                             <div className="form-group frms">
                                             <h3 style={{fontWeight:"bold", textAlign:"center"}}>Add Department and Society name</h3><br/>
@@ -92,9 +92,9 @@ export default function Deptadmin() {
                         </div>
 
                         <div className='modal fade' id="mymodal1" role="dialog">
-                            <div className='modal-dialog modal-md'>
-                                <div className='modal-content deptfrm'>
-                                    <div className='modal-body'>
+                            <div className='modal-dialog modal-md '>
+                                <div className='modal-content'>
+                                    <div className='modal-body deptfrm'>
                                         <form  onSubmit={handleform}>
                                             <div className="form-group frms">
                                                 <h3 style={{fontWeight:"bold", textAlign:"center"}}>Add Department name</h3><br/>

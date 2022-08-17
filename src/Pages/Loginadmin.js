@@ -15,7 +15,7 @@ export default function Login() {
       
     }
     
-
+    const [show, setshow] = useState(true);
   return (
     <div>
     <div className="main"> 
@@ -48,10 +48,25 @@ export default function Login() {
             
             <div className="form-group frms">
             <div className="input-group">
-             <span className="input-group-addon glycol"><i className="glyphicon glyphicon-lock "></i></span>
-            <input type={'password'} name="passwordadmin" placeholder="Admin Password" className="form-control" required />
-            </div>
-            </div>
+             <span className="input-group-addon glycol"><i className="glyphicon glyphicon-lock"></i></span>
+                        <input
+                        type={show ? ('password'): ('text')} 
+                        name="password"
+                        placeholder="Password"
+                        className="form-control" required />
+                        <div className="input-group-btn">
+                       { show ? (
+                        <i type={'button'} onClick={() => setshow(false)} className="glyphicon glyphicon-eye-open btn btn-default eye">
+                        </i>
+                        ) : (
+                        <i type={'button'} onClick={() => setshow(true)} className="btn glyphicon glyphicon-eye-close  btn btn-default eye">
+                        </i>
+                        )
+                       }
+                        <div/>
+                        </div>
+                 </div>
+                 </div>
             <div className="form-group">
                 <input type={'submit'} value="Login" className="btn btnn btn-info sub"/>
             </div><br/>

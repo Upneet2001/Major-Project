@@ -14,13 +14,15 @@ const connectionString = "mongodb+srv://Himani:himani@cluster0.a8nilmi.mongodb.n
 var Users;
 var Depart;
 var Soc;
+var Member;
 MongoClient.connect(connectionString, function(err, succ) {
     if(err) throw err;
     console.log('Db Connected');
     var db = succ.db('Project');
     Users = db.collection('Users');
     Depart = db.collection('Departmentname');
-    Soc = db.collection('Society')
+    Soc = db.collection('Society');
+    Member= db.collection('Memberslist');
 })
 
 app.post('/AddUser', (req,res) => {
@@ -39,6 +41,12 @@ app.post('/AddDepart', (req,res) => {
 })
 app.post('/AddSociety', (req,res) => {
     Soc.insertOne(req.body).then((succ) => {
+        res.send("ok");
+    }
+    )
+})
+app.post('/Addmember', (req,res) => {
+    Member.insertOne(req.body).then((succ) => {
         res.send("ok");
     }
     )

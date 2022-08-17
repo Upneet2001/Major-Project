@@ -1,13 +1,18 @@
 import React from "react";
+import Sidebaradmin from './Sidebaradmin'
 
 export default function Departmentadmin() {
   return (
     <div className="department">
+      <Sidebaradmin/>
       <div className="dept">
-        <div className="container-fluid log">
-          <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 deptfrm frm">
-            <form className="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-10 col-md-10 col-sm-10 col-xs-10 login">
-              <h1 className="text">Members of Society</h1>
+          <div className="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+       
+            <form className=" col-lg-12 login">
+            <h1 className="text3 container">Members of Society:</h1><br/>
+              <div className="col-lg-12 members">
+              
+              <div className="divide1 col-lg-6">
               <div className="form-group frms">
                 <label>Coordinator </label>
                 <input
@@ -70,6 +75,8 @@ export default function Departmentadmin() {
                   />
                
               </div>
+              </div>
+              <div className="divide col-lg-6">
               <div className="form-group frms">
                 <label>
                   Event Management
@@ -130,12 +137,15 @@ export default function Departmentadmin() {
                     className="form-control"
                     required
                   />
-            
+            </div>
               </div>
+              </div>
+              
             </form>
           </div>
         </div>
       </div>
-    </div>
+    
+
   );
 }

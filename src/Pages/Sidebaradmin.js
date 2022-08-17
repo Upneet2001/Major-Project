@@ -30,6 +30,7 @@ export default function Sidebaradmin() {
                                 <FaDashcube /> Dashboard <FaChevronDown />
                             </a>
                             <ul className="collapse pad-0" id="home">
+                                <li className="list-group-item"><Link to="/Loginadmin">Login Admin</Link></li>
                                 <li className="list-group-item"><Link to="/Deptadmin">Add Department and society</Link></li>
                                 <li className="list-group-item"><Link to="/Members">Members List</Link></li>
                             </ul>

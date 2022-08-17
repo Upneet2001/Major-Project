@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {Link} from 'react-router-dom';
-import { FaBeer, FaHome, FaCaretRight, FaChevronDown, FaDashcube, FaWpforms, } from 'react-icons/fa';
+import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 import Sidebaradmin from "./Sidebaradmin";
 
-export default function Dashbaord1() {
+export default function Dashboardadmin() {
 
     const [show, setshow] = useState(false);
 
@@ -16,25 +16,11 @@ export default function Dashbaord1() {
 
 
     return (
-        <div className="pad-0">
+        <div >
+          
            <Sidebaradmin/>
-            <div className="col-lg-10 right_col">
-                {/* <!-- top navigation --> */}
-                <div className="navbar navbar-default top">
-                    <div className="container-fluid">
-                        <div className="navbar-header">
-                            <button type="button" class="navbar-toggle" onClick={() => setshow(true)}>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-
-                
-            </div>
+           <Navbar/>
+           
         </div>
     )
 }

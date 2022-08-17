@@ -4,12 +4,35 @@
 .main, .dept, .frms, .pad-0, .department{
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.navi{
+  background-color: #f0c977 !important;
+}
+.list{
+  font-size: 20px !important;
+  color: #024858 !important;
+  font-weight: bold;
+}
+.please{
+  line-height: 70px !important;
+  font-size: 23px;
+}
 .navbar-header{
   background-color: aquamarine;
+}
+.deptfrm{
+  background-color:#bae1e1;
 }
 .glycol{
   background-color: #bae1e1 !important;  
 color:#024858 !important;
+}
+.eye{
+  margin-top: -2px !important;
+  background-color: lightgray !important; 
+}
+.pass{
+  display: flex;
+  justify-content: space-around;
 }
 .easy{
   font-family: gabriola;
@@ -17,6 +40,7 @@ color:#024858 !important;
   font-size: 35px;
   color:#047d79;
 }
+
 .white{
   background-color: white;
 }
@@ -29,7 +53,7 @@ color:#024858 !important;
   font-size: 28px;
 }
 .left_col{
-  background-color: #047d79;
+  background-color: #0a4958;
 }
 .App-logo {
   height: 40vmin;
@@ -51,8 +75,10 @@ color:#024858 !important;
   border-radius: 25px;
 }
 
-.deptfrm{
-  background-image:linear-gradient(#bae1e1,#c6eeed); 
+.im{
+  width:100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 .register{
   display: flex;
@@ -64,16 +90,31 @@ color:#024858 !important;
   padding: 0px !important;
   border-radius: 25px;
 }
+.update{
+  text-decoration: none !important;
+  color: white;
+}
 .text{
   text-align: center;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 35px;
+  line-height: 70px !important;
+}
+.text3{
+  font-weight: bold;
+  font-size: 35px;
   line-height: 70px !important;
 }
 .add{
   float: right;
   font-size: 18px !important;
   margin: 1%;
+}
+.upbtn{
+  float: right;
+  font-size: 20px !important;
+  width: 15% !important;
+  margin-right: 2% !important;
 }
 .btndep{
   float: left;
@@ -91,6 +132,14 @@ color:#024858 !important;
   padding: 2% !important;
 font-size: 18px !important;
 }
+.subevent{
+  font-size: 20px !important;
+  float: right;
+  margin-bottom: 4% !important;
+}
+.filee{
+  font-size: 18px !important;
+}
 .plz{
   line-height: 30px !important;
 }
@@ -102,9 +151,24 @@ font-size: 18px !important;
   background-color: #87dbd9 !important;
   color: black !important;
 }
+.members{
+  display: flex;
+  align-items:center;
+}
 .sub{
   width: 100%;
+  font-size: 20px !important;
 }
+.sub1{
+  width: 100%;
+  font-size: 20px !important;
+  background-color: #0097aa !important;
+}
+.glycol1{
+  background-color: #83b4c0 !important;
+  color: black !important;
+}
+
 .form-group{
   padding: 1% !important;
 }
@@ -115,7 +179,7 @@ font-size: 18px !important;
   padding: 0px !important;
 }
 label{
-  font-size: 20px;
+  font-size: 18px;
 }
 .tbl, td, .th{
   border: 2px solid grey !important;
@@ -148,8 +212,32 @@ td, th{
 .App-link {
   color: #61dafb;
 }
-
-
+.panel{
+  border: 2px solid #c6eeed !important;
+  background-image:linear-gradient(#c6eeed,white,#c6eeed);
+  border-radius: 15% !important;
+  box-shadow: 0px 0px 10px 10px lightgray !important;
+  padding: 4%;
+  margin: 4%;
+}
+.panel:hover{
+  box-shadow: 0px 0px 10px 10px #aadedd !important;
+}
+.paneltop{
+font-size: 80px;
+}
+.panelbody{
+  font-weight: bold;
+  font-size: 22px;
+}
+.view{
+  background-color:#1c8f8d !important;
+  font-size: 20px !important;
+}
+.view:hover,.btnn:hover{
+  background-color: #87dbd9 !important;
+  color: black !important;
+}
 
 
 @keyframes App-logo-spin {
