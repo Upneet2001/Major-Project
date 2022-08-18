@@ -47,7 +47,10 @@ export default function Login() {
                         type={show ? ('password'): ('text')} 
                         name="password"
                         placeholder="Password"
-                        className="form-control" required />
+                        className="form-control" required 
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
+                        />
                         <div className="input-group-btn">
                        { show ? (
                         <i type={'button'} onClick={() => setshow(false)} className="glyphicon glyphicon-eye-open btn btn-default eye">

@@ -20,7 +20,7 @@ export default function Navbar() {
     <li className="dropdown"><a className="dropdown-toggle list" data-toggle="dropdown">Students<span className="caret"></span></a>
         <ul className="dropdown-menu">
         <li  className="list"><Link to="/Login">Student's Login</Link></li>
-        <li  className="list"><Link to="/Register">Student's Registeration</Link></li>
+        <li  className="list"><Link to="/Register">Student's Registration</Link></li>
         </ul>
     </li>
     </ul>

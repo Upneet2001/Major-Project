@@ -16,6 +16,7 @@ import Soclogin from './Pages/Soclogin';
 import Updateprofile from './Pages/Updateprofile';
 import LaunchEvent from './Pages/LaunchEvent';
 import Navbar from './Pages/Navbar';
+import Studentlist from './Pages/Studentlist';
 function App() {
   return (
     <div >
@@ -33,6 +34,7 @@ function App() {
           <Route path='/Updateprofile' element={<Updateprofile/>}/>
           <Route path='/LaunchEvent' element={<LaunchEvent/>}/>
           <Route path='/Navbar' element={<Navbar/>}/>
+          <Route path='/Studentlist' element={<Studentlist/>}/>
           </Routes>
       </Router>
     </div>

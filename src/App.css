@@ -1,20 +1,24 @@
 .App {
   text-align: center;
 }
-.main, .dept, .frms, .pad-0, .department{
+.main, .dept, .frms, .pad-0, .department,.student{
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .navi{
   background-color: #f0c977 !important;
+  width: 100% !important;
+}
+#sidebar-menu{
+  height: 100vmin;
 }
 .list{
-  font-size: 20px !important;
+  font-size: 18px !important;
   color: #024858 !important;
   font-weight: bold;
 }
 .please{
-  line-height: 70px !important;
-  font-size: 23px;
+  line-height: 60px !important;
+  font-size: 20px;
 }
 .navbar-header{
   background-color: aquamarine;
@@ -37,8 +41,8 @@ color:#024858 !important;
 .easy{
   font-family: gabriola;
   font-weight: bold;
-  font-size: 35px;
-  color:#047d79;
+  font-size: 36px;
+  color:#024858;
 }
 
 .white{
@@ -50,7 +54,7 @@ color:#024858 !important;
 .text2{
   line-height: 50px !important;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 24px;
 }
 .left_col{
   background-color: #0a4958;
@@ -81,8 +85,6 @@ color:#024858 !important;
   border-top-right-radius: 25px;
 }
 .register{
-  display: flex;
-  align-items: center;
   background-image:linear-gradient( #59cdca,white,white, white, white,#c6eeed);
 }
 .img2{
@@ -97,12 +99,12 @@ color:#024858 !important;
 .text{
   text-align: center;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 30px;
   line-height: 70px !important;
 }
 .text3{
   font-weight: bold;
-  font-size: 35px;
+  font-size: 27px;
   line-height: 70px !important;
 }
 .add{
@@ -113,7 +115,6 @@ color:#024858 !important;
 .upbtn{
   float: right;
   font-size: 20px !important;
-  width: 15% !important;
   margin-right: 2% !important;
 }
 .btndep{
@@ -129,11 +130,21 @@ color:#024858 !important;
  background-color:#1c8f8d !important;
 }
 .form-control{
-  padding: 2% !important;
-font-size: 18px !important;
+  padding: 1% !important;
+font-size: 16px !important;
 }
+.yel th{
+  text-align: center;
+  font-weight: bold;
+  background-color: lightgray;
+}
+.head th{
+  text-align: center;
+  background-color: white;
+}
+
 .subevent{
-  font-size: 20px !important;
+  font-size: 18px !important;
   float: right;
   margin-bottom: 4% !important;
 }
@@ -151,17 +162,13 @@ font-size: 18px !important;
   background-color: #87dbd9 !important;
   color: black !important;
 }
-.members{
-  display: flex;
-  align-items:center;
-}
 .sub{
   width: 100%;
-  font-size: 20px !important;
+  font-size: 18px !important;
 }
 .sub1{
   width: 100%;
-  font-size: 20px !important;
+  font-size: 18px !important;
   background-color: #0097aa !important;
 }
 .glycol1{
@@ -179,19 +186,22 @@ font-size: 18px !important;
   padding: 0px !important;
 }
 label{
-  font-size: 18px;
-}
-.tbl, td, .th{
-  border: 2px solid grey !important;
-}
-td, th{
-  text-align: center;
-  font-size: 20px;
-}
-.th{
-  font-weight: bold;
+  font-size: 16px;
 }
 
+td, th{
+  text-align: center;
+  font-size: 14px;
+}
+
+.tble {
+  counter-reset: serial-number;  /* Set the serial number counter to 0 */
+}
+
+.tble td:first-child:before {
+  counter-increment: serial-number;  /* Increment the serial number counter */
+  content: counter(serial-number);  /* Display the counter */
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -238,7 +248,6 @@ font-size: 80px;
   background-color: #87dbd9 !important;
   color: black !important;
 }
-
 
 @keyframes App-logo-spin {
   from {

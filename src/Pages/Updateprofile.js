@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebaradmin from "./Sidebaradmin";
 import axios from 'axios';
+import swal from 'sweetalert';
 
 export default function Updateprofile() {
   var uri = "http://localhost:1200/";
@@ -18,10 +19,12 @@ export default function Updateprofile() {
             Socialmedia: data.get('socialmedia'),
             Creative: data.get('creative'),
             Content: data.get('content'),
+            ActiveMembers: data.get('activemembers'),
+            Executives: data.get('executives'),
         }
         axios.post(uri+'Addmember', obj).then((succ) => {
             if(succ.data == "ok"){
-                alert('Data Added');
+              swal("Data Added","","success")
                 e.target.reset();
                 e.target.name.focus();
             }
@@ -34,8 +37,8 @@ export default function Updateprofile() {
       <div className="dept">
         <div className="col-lg-10 col-md-10 col-sm-12 col-xs-12">
           <form className=" col-lg-12 login" onSubmit={handleform}>
-            <h1 className="text3 container">Members of Society:</h1>
-            <br />
+            <h1 className="text3 container">Update Members:</h1>
+            
             <div className="col-lg-12 members">
               <div className="divide1 col-lg-6">
                 <div className="form-group frms">
@@ -84,8 +87,8 @@ export default function Updateprofile() {
                     
                   />
                 </div>
-              </div>
-              <div className="divide col-lg-6">
+              
+              
                 <div className="form-group frms">
                   <label>Event Management</label>
                   <input
@@ -93,9 +96,10 @@ export default function Updateprofile() {
                     name="event"
                     placeholder=" Event Management"
                     className="form-control"
-                    
                   />
+                  </div>
                 </div>
+                <div className="divide col-lg-6">
                 <div className="form-group frms">
                   <label>Tech Team</label>
                   <input
@@ -132,6 +136,26 @@ export default function Updateprofile() {
                     type={"text"}
                     name="content"
                     placeholder="Content"
+                    className="form-control"
+                    
+                  />
+                </div>
+                <div className="form-group frms">
+                  <label>Active Members </label>
+                  <input
+                    type={"text"}
+                    name="activemembers"
+                    placeholder="Active Members"
+                    className="form-control"
+                    
+                  />
+                </div>
+                <div className="form-group frms">
+                  <label>Executives </label>
+                  <input
+                    type={"text"}
+                    name="executives"
+                    placeholder="Executives"
                     className="form-control"
                     
                   />

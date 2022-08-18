@@ -12,21 +12,21 @@ export default function Societypanel() {
       <Sidebaradmin/>
     <Navbar/>
         <div className='col-lg-10 social'>
-                        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-8 panel">
+                        <div className="col-lg-3 col-md-3 col-sm-5 col-xs-11 panel">
                             <center>
                             <span className="paneltop"><FaComments/></span>
                             <div className="panelbody">Chat Group</div><br/>
                             <button className="btn btn-info view">Chat</button>
                             </center>
                         </div>
-                        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-8 panel">
+                        <div className="col-lg-3 col-md-3 col-sm-5 col-xs-11 panel">
                             <center>
                             <span className="paneltop"><FaUsers/></span>
                             <div className="panelbody">Update Members</div><br/>
                             <button className="btn btn-info view "><Link to="/Updateprofile" className="update">Update</Link></button>
                             </center>
                         </div>
-                        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-8 panel">
+                        <div className="col-lg-3 col-md-3 col-sm-5 col-xs-11 panel">
                             <center>
                             <span className="paneltop"><FaCalendarCheck/></span>
                             <div className="panelbody">Launch an Event</div><br/>

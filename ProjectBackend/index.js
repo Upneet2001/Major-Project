@@ -15,14 +15,27 @@ var Users;
 var Depart;
 var Soc;
 var Member;
+var Event;
+var Adminn
 MongoClient.connect(connectionString, function(err, succ) {
     if(err) throw err;
     console.log('Db Connected');
     var db = succ.db('Project');
+    Adminn= db.collection('AdminLogin');
     Users = db.collection('Users');
     Depart = db.collection('Departmentname');
     Soc = db.collection('Society');
     Member= db.collection('Memberslist');
+    Event= db.collection('EventDetails')
+})
+
+app.get('/AddAdmin', (req,res) => {
+    Adminn.insertOne({
+        userID:'admin',
+        Password:'123456',
+    }).then((succ) => {
+        res.send(succ);
+    })
 })
 
 app.post('/AddUser', (req,res) => {
@@ -41,6 +54,12 @@ app.post('/AddDepart', (req,res) => {
 })
 app.post('/AddSociety', (req,res) => {
     Soc.insertOne(req.body).then((succ) => {
+        res.send("ok");
+    }
+    )
+})
+app.post('/AddEventDetails', (req,res) => {
+    Event.insertOne(req.body).then((succ) => {
         res.send("ok");
     }
     )
@@ -75,7 +94,7 @@ app.post('/getoneUsers', (req,res) => {
     })
 })
 
-app.post('/deleteonedata', (req,res) => {
+app.post('/deleteuser', (req,res) => {
     console.log(req.body.id);
     var idd = new mongodb.ObjectId(req.body.id);
     Users.deleteOne({

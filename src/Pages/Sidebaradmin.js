@@ -33,6 +33,7 @@ export default function Sidebaradmin() {
                                 <li className="list-group-item"><Link to="/Loginadmin">Login Admin</Link></li>
                                 <li className="list-group-item"><Link to="/Deptadmin">Add Department and society</Link></li>
                                 <li className="list-group-item"><Link to="/Members">Members List</Link></li>
+                                <li className="list-group-item"><Link to="/Studentlist">Students List</Link></li>
                             </ul>
                         </li>
                         <li className="list-group-item text-center">
