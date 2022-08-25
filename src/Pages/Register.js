@@ -4,6 +4,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 
 
+
 export default function Register() {
 
 
@@ -39,7 +40,7 @@ export default function Register() {
     }
         const [data1, setdata1]= useState([]);
     function getdata1(){
-        axios.get(uri+'getDepart').then((succ) => {
+        axios.get(uri+'getsociety').then((succ) => {
             setdata1(succ.data);
             console.log(succ.data);
         })
@@ -126,9 +127,10 @@ export default function Register() {
             <option>{row.Department}</option>
              ))}
                </select>
-             </div>
-                                                       
+             </div>                                    
             </div>
+            
+            
             <div className="form-group frms">
             <div className="input-group">
              <span className="input-group-addon glycol"><i className="glyphicon glyphicon-list-alt"></i></span>
@@ -152,6 +154,7 @@ export default function Register() {
                         />
             </div>
             </div>
+           
             <div className="form-group frms">
             <div className="input-group">
              <span className="input-group-addon glycol"><i className="glyphicon glyphicon-user"></i></span>

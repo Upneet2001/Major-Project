@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import swal from 'sweetalert';
-import Sidebaradmin from "./Sidebaradmin";
+import SocDashboard from "./SocDashboard";
 
 
 export default function LaunchEvent() {
@@ -29,7 +29,7 @@ export default function LaunchEvent() {
 
   return (
     <div className="department">
-   <Sidebaradmin/>
+  <SocDashboard/>
       <div className="dept">
         <div className="col-lg-10 col-md-10 col-sm-10 col-xs-10">
           <form className=" col-lg-12 login" onSubmit={handleform}>

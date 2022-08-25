@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
-import Sidebaradmin from "./Sidebaradmin";
+import Studentnavbar from "./Studentnavbar";
+import Studentsidebar  from "./Studentsidebar";
 
 export default function Dashboardadmin() {
 
@@ -10,10 +10,9 @@ export default function Dashboardadmin() {
     var navi = useNavigate();
 
     useEffect(() => {
-    //   localStorage.setItem('AdminLogin', succ.data._id);
-        var id = localStorage.getItem('AdminLogin')
+        var id = localStorage.getItem('Studentlogin')
         if(!id){
-            navi('/Loginadmin');
+            navi('/Login');
         }
     })
 
@@ -28,9 +27,9 @@ export default function Dashboardadmin() {
 
     return (
         <div >
+          <Studentsidebar/>
+           <Studentnavbar/>
           
-           <Sidebaradmin/>
-           <Navbar/>
            
         </div>
     )

@@ -2,13 +2,24 @@ import axios from 'axios';
 import React, { useEffect, useState } from "react";
 import Sidebaradmin from './Sidebaradmin';
 import swal from 'sweetalert';
-
+import Navbar from './Navbar';
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Studentlist() {
+
+    var navi = useNavigate();
+
+    useEffect(() => {
+        var id = localStorage.getItem('AdminLogin')
+        if(!id){
+            navi('/Loginadmin');
+        }
+    })
+
     var uri= "http://localhost:1200/";
     const [data, setdata] = useState([]);
     function getdata(){
-        axios.get(uri+'getUsers').then((succ) => {
+        axios.post(uri+'getUsers').then((succ) => {
             setdata(succ.data);
             console.log(succ.data);
         })
@@ -28,7 +39,7 @@ export default function Studentlist() {
   return (
     <div>
         <Sidebaradmin/>
-      
+        <Navbar/>
         <div className='col-lg-10 student'>
         <h2 style={{textAlign:"center", fontWeight:"bold"}}>List of Students</h2><br/>
         <div className='table-responsive'>

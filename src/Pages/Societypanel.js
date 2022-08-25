@@ -4,13 +4,15 @@ import Sidebaradmin from './Sidebaradmin'
 import LaunchEvent from "./LaunchEvent";
 import Navbar from "./Navbar";
 import {Link} from 'react-router-dom';
+import SocNavbar from "./SocNavbar";
+import SocDashboard from "./SocDashboard";
 
 
 export default function Societypanel() {
   return (
     <div>
-      <Sidebaradmin/>
-    <Navbar/>
+      <SocDashboard/>
+      
         <div className='col-lg-10 social'>
                         <div className="col-lg-3 col-md-3 col-sm-5 col-xs-11 panel">
                             <center>

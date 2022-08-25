@@ -1,12 +1,27 @@
 .App {
   text-align: center;
 }
+.pad-0{
+  padding: 0px !important;
+}
 .main, .dept, .frms, .pad-0, .department,.student{
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .navi{
   background-color: #f0c977 !important;
-  width: 100% !important;
+  border-radius: 0px !important;
+  border: 0px !important;
+}
+.leftsoc{
+  background-color:#4ca6a5 ;
+}
+.navisoc{
+  background-color: rgb(108, 105, 105) !important;
+  border-radius: 0px !important;
+  border: 0px !important;
+}
+.navi .nav li a{
+  color: rgb(73, 53, 11) !important;
 }
 #sidebar-menu{
   height: 100vmin;
@@ -21,7 +36,7 @@
   font-size: 20px;
 }
 .navbar-header{
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 }
 .deptfrm{
   background-color:#bae1e1;
@@ -41,12 +56,20 @@ color:#024858 !important;
 .easy{
   font-family: gabriola;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 34px;
   color:#024858;
+}
+a{
+  cursor: pointer;
+}
+a:hover{
+  text-decoration: none !important;
 }
 
 .white{
   background-color: white;
+  width: 100%;
+  text-align: center;
 }
 .top{
   background-color:#f1d6a2 !important;
@@ -59,6 +82,7 @@ color:#024858 !important;
 .left_col{
   background-color: #0a4958;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -105,7 +129,12 @@ color:#024858 !important;
 .text3{
   font-weight: bold;
   font-size: 27px;
-  line-height: 70px !important;
+  line-height: 40px !important;
+}
+.text4{
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 40px !important;
 }
 .add{
   float: right;
@@ -224,7 +253,7 @@ td, th{
 }
 .panel{
   border: 2px solid #c6eeed !important;
-  background-image:linear-gradient(#c6eeed,white,#c6eeed);
+  background-image:linear-gradient(#aadedd,white);
   border-radius: 15% !important;
   box-shadow: 0px 0px 10px 10px lightgray !important;
   padding: 4%;

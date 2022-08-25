@@ -1,21 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
-import Sidebaradmin from "./Sidebaradmin";
+import SocNavbar from "./SocNavbar";
+import SocSidebar from "./SocSidebar";
 
-export default function Dashboardadmin() {
+export default function SocDashboard() {
 
     const [show, setshow] = useState(false);
 
     var navi = useNavigate();
-
-    useEffect(() => {
-    //   localStorage.setItem('AdminLogin', succ.data._id);
-        var id = localStorage.getItem('AdminLogin')
-        if(!id){
-            navi('/Loginadmin');
-        }
-    })
 
 
     // console.log();
@@ -28,9 +20,9 @@ export default function Dashboardadmin() {
 
     return (
         <div >
-          
-           <Sidebaradmin/>
-           <Navbar/>
+          <SocSidebar/>
+           <SocNavbar/>
+           
            
         </div>
     )
