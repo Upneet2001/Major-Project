@@ -1,29 +1,35 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {
-  FaBeer,
-  FaHome,
-  FaCaretRight,
-  FaChevronDown,
-  FaDashcube,
-  FaWpforms,
-  FaUsers,
+  FaUsers
 } from "react-icons/fa";
 import Mainnavbar from "./MainNavbar";
 
 export default function Soclogin() {
   var uri = "http://localhost:1200/";
+  var navi = useNavigate();
 
   function handleform(e) {
     e.preventDefault();
     var data = new FormData(e.currentTarget);
     var obj = {
       UserID: data.get("socuser"),
-      Dashboard: data.get("department"),
-      Society: data.get("society"),
       Password: data.get("password"),
     };
+    axios.post(uri + "Loginsoc", obj).then((succ) => {
+      console.log(succ.data);
+      if (succ.data._id) {
+        console.log("yes");
+        localStorage.setItem("SocietyLogin", succ.data._id);
+        navi("/SocDashboard");
+      } else {
+        console.log("no");
+        alert("Wrong CRN or Password");
+      }
+    });
   }
+  
   const [data, setdata] = useState([]);
   function getdata() {
     axios.get(uri + "getSociety").then((succ) => {
@@ -37,11 +43,10 @@ export default function Soclogin() {
 
   const [show, setshow] = useState(true);
   return (
-    <div>
+    <div className="Home">
       <Mainnavbar />
-      <div className="main">
-        <div className="container-fluid log">
-          <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 frm">
+        <div className="container-fluid log ">
+          <div className="col-lg-4 col-md-4 col-sm-8 col-xs-12 frm">
             <div className="img">
               <img src="img1.jpg" className="img-responsive imgs" />
             </div>
@@ -50,7 +55,7 @@ export default function Soclogin() {
                 className="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-10 col-md-10 col-sm-10 col-xs-10 login"
                 onSubmit={handleform}
               >
-                <h1 className="text">Members Login</h1>
+                <h1 className="text">Society Login</h1>
                 <div className="form-group frms">
                   <div className="input-group">
                     <span className="input-group-addon glycol">
@@ -65,7 +70,7 @@ export default function Soclogin() {
                     />
                   </div>
                 </div>
-                <div className="form-group frms">
+                {/* <div className="form-group frms">
                   <div className="input-group">
                     <span className="input-group-addon glycol">
                       <i className="glyphicon glyphicon-home"></i>
@@ -80,8 +85,8 @@ export default function Soclogin() {
                       ))}
                     </select>
                   </div>
-                </div>
-                <div className="form-group frms">
+                </div> */}
+                {/* <div className="form-group frms">
                   <div className="input-group">
                     <span
                       className="input-group-addon glycol"
@@ -99,7 +104,7 @@ export default function Soclogin() {
                       ))}
                     </select>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="form-group frms">
                   <div className="input-group">
@@ -112,8 +117,6 @@ export default function Soclogin() {
                       placeholder="Password"
                       className="form-control"
                       required
-                      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                      title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                     />
                     <div className="input-group-btn">
                       {show ? (
@@ -145,7 +148,6 @@ export default function Soclogin() {
             </center>
           </div>
         </div>
-      </div>
     </div>
   );
 }

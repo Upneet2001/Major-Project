@@ -23,36 +23,18 @@ export default function Sidebaradmin() {
   }, []);
 
   return (
-    <div>
-      {" "}
-      <div
-        className="col-md-2 col-xs-2 left_col"
-        id="sidebar-menu"
-        style={{ display: show ? "block" : "none" }}
-      >
+    <div className="pad-1">
+      <div className="col-lg-2 col-md-2 col-sm-3 col-xs-12 left_col" id="sidebar-menu1" style={{ display: show ? "block" : "none" }}>
         <br />
-        {window.innerWidth < 768 && (
-          <button onClick={() => setshow(false)} className="btn pull-right clo">
-            x
-          </button>
-        )}
-
-        <div className="navbar navbar-brand white">
-          <span className="easy">EVENT IT EASY</span>
-        </div>
-        {/* <!-- sidebar menu --> */}
-        <div className="col-lg-12 col-xs-12 pad-0">
+        <div className="navbar white">
+          <span><img src="logoji.png" className=" easy" /></span>
+        </div><br/> 
+        <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-0">
           <div className="">
             <ul className="list-group">
               <li className="list-group-item">
-                <Link to='/Dashboardadmin'><FaDashcube /> Dashboard</Link>
-              </li>
-              <li className="list-group-item">
                 <Link to="/Deptadmin"><FaUsers/> Department and Society</Link>
               </li>
-              {/* <li className="list-group-item">
-                <Link to="/Members">Our Members</Link>
-              </li> */}
               <li className="list-group-item">
                 <Link to="/Studentlist"><FaList/> Students</Link>
               </li>
@@ -73,7 +55,6 @@ export default function Sidebaradmin() {
             </ul>
           </div>
         </div>
-        {/* <!-- /sidebar menu --> */}
       </div>
     </div>
   );

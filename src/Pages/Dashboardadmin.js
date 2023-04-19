@@ -27,7 +27,7 @@ export default function Dashboardadmin() {
 
 
     return (
-        <div >
+        <div>
           
            <Sidebaradmin/>
            <Navbar/>

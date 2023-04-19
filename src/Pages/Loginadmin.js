@@ -23,23 +23,23 @@ export default function Loginadmin() {
      if(succ.data._id){
       console.log('yes');
       localStorage.setItem('AdminLogin', succ.data._id);
-      navi('/Dashboardadmin');
+      navi('/Deptadmin');
      }
      else{
       console.log('no');
       alert("Wrong Id or Password");
      }
       
-    })
+    });
   }
 
 
   return (
-    <div>
+    <div className="Home">
       <Mainnavbar/>
       <div className="main ">
-        <div className="container-fluid log">
-          <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 frm">
+        <div className="container-fluid log ">
+          <div className="col-lg-4 col-md-4 col-sm-8 col-xs-12  frm">
             <div className="img">
               <img src="admin.jpg" className="img-responsive im" />
             </div>

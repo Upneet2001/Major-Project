@@ -1,17 +1,88 @@
 .App {
   text-align: center;
 }
+.nv{
+	background: white !important;
+}
+.nv1{
+  
+  background: #095c5b !important;
+}
+.navbar{
+	margin-bottom: 0px !important;
+	border-radius: 0px !important;
+}
+.navgad{
+  margin-top: 4% !important;
+}
+.navbar-brand{
+width:200px !important;
+height:auto !important;
+}
+.hide{
+  visibility: hidden !important;
+}
+
+.nav2 li a{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 20px;
+	color:  black !important;
+	padding: 20px 20px !important;
+}
+.nav1 li:hover, .nav2 li:hover{
+	background: #095c5b;
+	border-radius: 5px;
+}
+.nav1 li:hover a, .nav2 li:hover a{
+	color: white !important;
+}
 .pad-0{
   padding: 0px !important;
 }
-.main, .dept, .frms, .pad-0, .department,.student{
+.main, .dept, .frms, .pad-0, .department,.student, .view, .socabout,.studhome,.Studeventsoc, .evie, .currentsoc, .vieweve, .Studevent,.Dashboardstudent{
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.socabout{
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .navi{
   background-color: #f0c977 !important;
   border-radius: 0px !important;
   border: 0px !important;
 }
+.details{
+  padding:15px;
+}
+.flot{
+  float: right;
+}
+.flote{
+  float: right;
+  margin:1%;
+  font-size: 17px !important;
+}
+.Home {
+  background-image: url("./Pages/img/bggg.jpg");
+  background-size: "cover";
+  height: 100vh;
+  background-repeat:repeat; 
+}
+.Home1 {
+  background-image: url("./Pages/img/bggg.jpg");
+  background-size: "cover";
+  height: 110vh;
+  background-repeat:repeat; 
+}
+.homenav{
+  font-size: 20px !important;
+    background-color: #095c5b !important;
+    border-radius: 0px !important;
+    border: 0px !important;
+  }
+  .homenav .nav li a{
+    color:white !important;
+  }
 .leftsoc{
   background-color:#4ca6a5 ;
 }
@@ -26,6 +97,9 @@
 #sidebar-menu{
   height: 100vmin;
 }
+#sidebar-menu1{
+  height: 100vmin;
+}
 .list{
   font-size: 18px !important;
   color: #024858 !important;
@@ -34,9 +108,6 @@
 .please{
   line-height: 60px !important;
   font-size: 20px;
-}
-.navbar-header{
-  /* background-color: aquamarine; */
 }
 .deptfrm{
   background-color:#bae1e1;
@@ -54,10 +125,15 @@ color:#024858 !important;
   justify-content: space-around;
 }
 .easy{
+    width:100% !important;
+    height:auto !important;
+}
+
+.easy1{
   font-family: gabriola;
   font-weight: bold;
-  font-size: 34px;
-  color:#024858;
+  font-size: 29px;
+  color: white !important;
 }
 a{
   cursor: pointer;
@@ -67,7 +143,6 @@ a:hover{
 }
 
 .white{
-  background-color: white;
   width: 100%;
   text-align: center;
 }
@@ -89,12 +164,13 @@ a:hover{
 }
 .log{
   margin: 2%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  
 }
 .regi{
-  margin: 3%;
+  margin: 1.5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,7 +178,15 @@ a:hover{
 .imgs{
   border-radius: 25px;
 }
-
+.imf{
+  width:100%;
+  height: 35vmin !important;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+.nmey:hover,.nmey:focus{
+  color:black !important;
+}
 .im{
   width:100%;
   border-top-left-radius: 25px;
@@ -116,10 +200,7 @@ a:hover{
   padding: 0px !important;
   border-radius: 25px;
 }
-.update{
-  text-decoration: none !important;
-  color: white;
-}
+
 .text{
   text-align: center;
   font-weight: bold;
@@ -129,12 +210,18 @@ a:hover{
 .text3{
   font-weight: bold;
   font-size: 27px;
-  line-height: 40px !important;
+  line-height: 30px !important;
+  margin: 2% !important;
+  margin-left:3% !important;
+}
+.text5{
+  font-size: 27px;
 }
 .text4{
   font-weight: bold;
   font-size: 20px;
   line-height: 40px !important;
+  margin-left:3% !important;
 }
 .add{
   float: right;
@@ -161,11 +248,15 @@ a:hover{
 .form-control{
   padding: 1% !important;
 font-size: 16px !important;
+z-index:0 !important;
 }
 .yel th{
   text-align: center;
   font-weight: bold;
   background-color: lightgray;
+  padding-top: 1.5% !important;
+  padding-bottom: 1.5% !important;
+  font-size:16px ;
 }
 .head th{
   text-align: center;
@@ -192,7 +283,7 @@ font-size: 16px !important;
   color: black !important;
 }
 .sub{
-  width: 100%;
+  width: 30%;
   font-size: 18px !important;
 }
 .sub1{
@@ -209,8 +300,9 @@ font-size: 16px !important;
   padding: 1% !important;
 }
 .frm, .register{
+  background-color: white;
   box-shadow: 0px 0px 10px 10px lightgray;
-  border-radius: 25px;
+  border-radius: 25px !important;
   margin: 0px !important;
   padding: 0px !important;
 }
@@ -231,11 +323,8 @@ td, th{
   counter-increment: serial-number;  /* Increment the serial number counter */
   content: counter(serial-number);  /* Display the counter */
 }
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
+
 
 .App-header {
   background-color: #282c34;
@@ -251,38 +340,650 @@ td, th{
 .App-link {
   color: #61dafb;
 }
-.panel{
+.panell{
+ 
   border: 2px solid #c6eeed !important;
   background-image:linear-gradient(#aadedd,white);
+  border-radius: 15% !important;
+  box-shadow: 0px 0px 10px 10px lightgray !important;
+  padding: 2%;
+  margin: 3%;
+}
+.panell1{
+  border: 2px solid #31c9c7 !important;
+  background-image:linear-gradient(#41d9d7,white);
   border-radius: 15% !important;
   box-shadow: 0px 0px 10px 10px lightgray !important;
   padding: 4%;
   margin: 4%;
 }
-.panel:hover{
+.panell1:hover, .panell:hover{
   box-shadow: 0px 0px 10px 10px #aadedd !important;
 }
 .paneltop{
 font-size: 80px;
 }
+
+.pane{
+  background-color: #d5f9f9;
+  border-radius: 3% !important;
+  box-shadow: 0px 0px 10px 10px lightgray !important;
+  padding: 1%;
+  margin: 4%;
+  height: 75vh !important;
+}
+ .pane:hover{
+  box-shadow: 0px 0px 10px 10px #90bbba !important;
+}
+.panetop{
+font-size: 80px;
+}
+.stupic{
+  width:100% !important;
+  height:50vmin !important;
+}
+
+.pain{
+  background-color: #d5f9f9;
+  border-radius: 3% !important;
+  box-shadow: 0px 0px 10px 10px lightgray !important;
+  height: 70vmin !important;
+  padding-top:1%;
+  padding-bottom: 1%;
+  margin:4%;
+}
+ .pain:hover{
+  box-shadow: 0px 0px 10px 10px #90bbba !important;
+}
+.paintop{
+font-size: 80px;
+}
+.stusocpic{
+border-radius: 100%;
+  width:68% !important;
+  height:32vmin !important;
+}
+
+
+
+
+.faiconsize{
+  font-size: 23px;
+  color: white;
+ 
+}
 .panelbody{
   font-weight: bold;
-  font-size: 22px;
+  font-size: 21px;
+}
+.naam{
+  text-decoration: none !important;
+  color: white;
+}
+.update{
+  text-decoration: none !important;
+  color: white;
+  padding: 2% !important;
+  font-weight: bold;
+  font-size: 18px;
 }
 .view{
+  text-decoration: none !important;
+  color: white;
+  padding: 2% !important;
+  font-weight: bold !important;
+  font-size: 18px !important;
   background-color:#1c8f8d !important;
-  font-size: 20px !important;
 }
-.view:hover,.btnn:hover{
+.view1{
+  text-decoration: none !important;
+  color: white;
+  padding: 1.5% !important;
+  font-weight: bold !important;
+  font-size: 18px !important;
+  background-color:#1c8f8d !important;
+  float: right;
+}
+
+.view:hover,.view1:hover,.btnn:hover{
   background-color: #87dbd9 !important;
   color: black !important;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fontt{
+  font-size: 21px;
 }
+.evnimg{
+  height: 60vmin !important;
+  width: 90%;
+}
+.evi{
+  height: 80vmin !important;
+  width: 100%;
+}
+.containerchat {
+  height:65vmin;
+  background: #aadedd;
+  box-shadow: #292739 0 10px 20px;
+  font-size: 14px;
+  overflow: auto;
+  font-family:Georgia',Times New Roman', Times, serif;
+}
+
+.headers {
+  background: #292739;
+  box-shadow: #292739 0 10px 20px;
+  display: flex;
+  margin: 0px !important;
+}
+
+
+.i1 {
+  padding-top: 2%;
+  margin-left: 8% !important;
+  font-size: 70px;
+  color: white;
+}
+.paneltopp{
+  text-align :center;
+  width: 40% !important;
+  margin-left: 25% !important;
+  margin-top: 7% !important;
+}
+
+.cp{
+  cursor: pointer;
+  background-color: #095c5b !important;
+  width: 100% !important;
+  font-size: 20px !important;
+  padding:4% !important;
+  color:white !important;
+  border: 2px solid black !important;
+  margin:1%  !important;
+}
+.click{
+  font-size: 28px;
+  width: 100% !important;
+  font-weight: bold;
+  padding-left:1% !important
+}
+.grp-name {
+  padding-top: 1%;
+  font-size: 20px;
+  margin-left: 4%;
+  font-weight: 600;
+  color:white;
+}
+.grp-status {
+  letter-spacing: 1px;
+  margin-left: 4%;
+  color:white;
+}
+.timee{
+  font-size: 11px !important;
+  width: 99.5% !important;
+}
+
+.chatbox {
+  padding: 13px 5px;
+  display: flex;
+  flex-direction: column;
+  float: right !important;
+  align-items: right !important;
+  margin-left: 20% !important;
+}
+.chatboxme {
+  padding: 30px 20px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  float: left !important;
+  margin-left: 12% !important;
+}
+.chatbox .chat,.chatboxme .chat {
+  display: flex;
+  /* gap: 15px; */
+}
+.chatbox .msg ,.chatboxme .msg{
+  background: lightgray;
+  max-width: 80%;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.chatname{
+  position:relative;
+}
+.i2{
+  font-size:30px;
+  color:#292739;
+  text-align: center !important;
+ 
+}
+.tithi{
+  float:left !important;
+  font-size: 10px !important;
+  position: relative;
+  left:-8px;
+  bottom:-10px;
+}
+.tim{
+  float:right !important;
+  font-size: 10px !important;
+  position: relative;
+  right:-8px;
+  bottom:-10px;
+}
+.namee{
+  margin-top:20px !important;
+}
+.policy {
+  box-shadow: #292739 0 10px 20px;
+  background: #3a384c;
+  padding: 20px;
+  display: flex;
+}
+.events{
+  background-color: #daf3f3;
+  padding: 1%;
+  margin: 0.5%;
+}
+.foot{
+  background-color: #095c5b !important;
+  color: white;
+  margin-top:4% !important;
+}
+.footpic1{
+  width:55% !important;
+}
+.footpic{
+  width:40% !important;
+}
+.pp{
+  font-size: 16px;
+  text-align: justify ;
+}
+
+.evie table, .evie th, .evie td{
+  border: 2px solid gray;
+  border-radius: 10px;
+  line-height: 30px;
+  padding: 1.7%;
+  text-align: left !important;
+  font-size: 18px !important;
+  background-color: white;
+}
+  .vieweve table, .vieweve th, .vieweve td{
+    border: 2px solid gray;
+    border-radius: 10px;
+    line-height: 30px;
+    
+    text-align: left !important;
+    font-size: 15px !important;
+    background-color: white;
+  }
+  .vieweve th{
+    padding-right: 3% !important;
+    padding-top: 1% !important;
+    padding-bottom: 1% !important;
+    padding-left: 0.2% !important;
+  }
+  .vieweve td{
+    padding: 1.5% !important;
+}
+.evie table{
+  margin-top: 1% !important;
+  margin-bottom: 2% !important;
+}
+.evie th{
+    color: black;
+    font-size: 20px;
+}
+.evie td{
+  text-align: justify !important;
+}
+.evie tr{
+  text-align: justify !;
+  font-size: 24px !important;
+}
+.cross{
+  float:right !important;
+  font-weight: bold !important;
+  border-radius: 50% !important;
+}
+.sochead{
+  font-weight: bold !important;
+  text-align: center !important;
+  font-size: 45px !important;
+  color: rgb(4, 35, 74) !important;
+}
+.dephead{
+  font-weight: bold !important;
+  text-align: center !important;
+  color: black !important;
+}
+.logohead{
+text-align: center !important;
+height: 35vh !important;
+border-radius: 100% !important;
+}
+.pabout{
+  text-align: justify !important;
+  font-size: 17px !important;
+}
+.contact{
+  background-color: #bcf3f2 !important;
+  margin-bottom:-4% !important;
+}
+.links{
+  font-size:40px !important ;
+  color: black !important;
+  text-decoration: none !important;
+}
+.socnav{
+ background-color: white !important;
+ color:black !important;
+}
+.socnav ul{
+  padding:1% !important;
+  font-size: 24px !important;
+}
+.navhead button{
+  background-color: white !important;
+  color:black !important;                  
+  border: none !important;
+}
+.navhead button:hover{
+  color:#095c5b!important;                                                            
+}
+.bhome{
+  padding-left: 30px !important;
+  margin-left:200px !important;
+  text-decoration: none !important;
+  background-color :maroon !important;
+}
+.applypan{
+  background-color: #d5f9f9;
+  
+}
+.applypan td{
+  font-size: 20px !important;
+}
+.maininfo{
+  background-color: #819ea1 !important;
+}
+.pad-1{
+  position: fixed;
+
+  top:0;
+  width: 100%;
+}
+.pad-2{
+  position: fixed;
+z-index: 1;
+  top:0;
+  width: 100%;
+}
+.marge1{
+  margin-top:5% !important;
+}
+.marge2{
+  margin-top:5% !important;
+}
+.pad-n{
+  z-index:1 !important;
+  position: fixed !important;
+  top:0;
+  width:100%;
+}
+.marge{
+  margin-top: 10% !important;
+}
+.margefew{
+  margin-top: 13% !important;
+}
+.carousel-inner{
+  margin-top:8% !important;
+    }
+    .navhead button{
+      margin-top: 2% !important;
+      font-size: 20px !important;
+    }
+
+@media screen and (max-width: 550px) {
+ .i1{
+  font-size: 40px !important;
+ }
+  .naaam{
+    font-size: 14px !important;
+  }
+  
+  #sidebar-menu{
+    height: 65vmin;
+    width:100%;
+  margin-top:20%;
+  }
+  #sidebar-menu1{
+    height: 65vmin;
+    width:100%;
+  margin-top:12%;
+  }
+  .pad-0{
+    position: fixed;
+    top:0;
+    width: 100%;
+  }
+  .pad-n{
+    z-index:1 !important;
+  }
+  
+  .text{
+    font-size: 20px;
+    margin-top:30%;
+    margin-left: 1%;
+  }
+  .btnn{
+    font-size: 10px !important;
+    margin-top: 2% !important;
+  }
+  .namee{
+    font-size: 16px !important;
+    margin:-1% !important;
+    float:right
+  }
+  .easy{
+    padding-top: 6% !important;
+  }
+  .easy1{
+    font-size: 22px !important;
+  }
+ 
+  .carousel-inner{
+margin-top:50% !important;
+  }
+  .marge{
+    margin-top:52.5% !important;
+  }
+  .margefew{
+    margin-top: 54% !important;
+  }
+  .apexx{
+    height :30vmin !important;
+  }
+  .collsoc{
+    font-size: 20px !important;
+  }
+  .socie1{
+    padding-top: 24% !important;
+  }
+  .pain{
+    height:105vmin !important;
+    font-size: 6px !important;
+  }
+  .details{
+    font-size: 16.3px !important;
+  }
+  .pane{
+    height:100vmin !important;
+  }
+  .stupic{
+    height: 60vmin !important;
+  }
+  .stusocpic{
+    height: 40vmin !important;
+  }
+  .carousel-indicators{ 
+    z-index: -1 !important;
+  }
+  .navhead button{
+    display: block !important;
+    
+  }
+  .bhome{
+    margin:2% !important;
+    margin-left:-8% !important;
+  }
+  .sochead{
+    font-size: 25px !important;
+  }
+  .dephead{
+    font-size: 20px !important;
+  }
+  .dephead1{
+    font-size: 18px !important;
+  }
+  .pabout{
+    font-size: 15px !important;
+  }
+  .applypan td{
+    font-size: 12px !important;
+  }
+  .nav2 li {
+    margin-top:-15px !important;
+  }
+  .marge1{
+    margin-top:100% !important;
+  }
+  
+  .pad-1{
+    position: relative;
+
+    height:auto;
+    width: 100%;
+  }
+  
+  
+  
+}
+@media screen and (max-width: 768px) {
+  .text{
+    margin-top:11%;
+  }
+  .text4{
+    font-size: 15px;
+    margin-left:7% !important;
+  }
+  .text3{
+  font-size: 18px;
+  margin-left:7% !important;
+  }
+  .Home {
+   
+    height: 185vh;
+    background-repeat:repeat; 
+  }
+  .log{
+    margin-top: 2% !important;
+    display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  }
+  .nav2 li a{
+    padding: 20px 5px !important;
+    font-size: 15.8px !important;
+  }
+  .details{
+    font-size: 16.3px !important;
+  }
+  .pain{
+    font-size: 6px !important;
+  }
+  .bhome{
+    padding-left: 10px !important;
+    margin-left:10px !important;
+    margin-top: 20px !important;
+  }
+  .marge1{
+    margin-top:15% !important;
+  }
+  .navhead button{
+    margin-top: 4% !important;
+    font-size: 15px !important;
+  }
+ 
+  
+  
+  
+}
+.webs{
+  color:white !important;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+.pow{
+  border-top:1px solid white !important;
+}
+.nav3 {
+  float: right !important;
+}
+.nav3 .form-control{
+	font-size: 15px;
+	padding:16px 21px !important;
+	border-radius: 20px 0px 0px 20px;
+ 
+  
+}
+.nav3 .btn,.btn2{
+	font-size: 15px;
+	padding:5px 20px !important;
+	background: #095c5b !important;
+	color: white;
+	border-radius: 0px 20px 20px 0px;
+}
+.btn{
+  z-index:0 !important;
+}
+.navbtn:hover{
+  border-color:white !important;
+
+}
+.vevents{
+  margin-bottom: 5% !important;
+}
+.stunavbtn{
+  background-color: #095c5b !important;
+}
+
+
+
+/* .sidebar{
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+}
+.navbarmain{
+  width: 100%;
+
+  z-index: 1;
+  top: 0;
+left:16.6%;
+  overflow-x: hidden; 
+}
+.set{
+  margin-left:16.6%;
+  margin-top:1%;
+  width:100%;
+  
+} */

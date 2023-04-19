@@ -25,7 +25,7 @@ export default function Sidebaradmin() {
   return (
     <div>
       {" "}
-      <div
+      {/* <div
         className="col-md-2 col-xs-2 left_col"
         id="sidebar-menu"
         style={{ display: show ? "block" : "none" }}
@@ -55,7 +55,7 @@ export default function Sidebaradmin() {
           </div>
         </div>
         {/* <!-- /sidebar menu --> */}
-      </div>
+      {/* </div> */} 
     </div>
   );
 }

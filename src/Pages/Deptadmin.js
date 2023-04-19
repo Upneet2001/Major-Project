@@ -37,15 +37,19 @@ export default function Deptadmin() {
       }
     });
   }
-  
+
 
 
   function handleform1(e) {
     e.preventDefault();
+    console.log(Math.floor(Math.random()*1000));
     var data = new FormData(e.currentTarget);
+    var rand= Math.floor(Math.random()*10000);
     var obj = {
       Department: data.get("departmentname"),
       Society: data.get("society"),
+      UserId: (data.get("society")+ rand ),
+      Password: (data.get("society")+ rand),
     };
     axios.post(uri + "AddSociety", obj).then((succ) => {
       if (succ.data == "ok") {
@@ -59,6 +63,7 @@ export default function Deptadmin() {
     });
   }
   const [data, setdata] = useState([]);
+
   function getdata() {
     axios.get(uri + "getSociety").then((succ) => {
       setdata(succ.data);
@@ -82,8 +87,17 @@ export default function Deptadmin() {
     getdata1();
   }, []);
 
-  function del(x) {
-    // alert(x);
+
+  function del(x, y) {
+    swal({
+      title: "Deletion Confirmation",
+      text: "Are you sure you want to delete?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
     axios.post(uri + "deleteSociety", { id: x }).then((succ) => {
       if (succ.data == "Deleted") {
         // alert('Deleted');
@@ -91,17 +105,37 @@ export default function Deptadmin() {
         getdata();
       }
     });
+
+   
+  axios.post(uri + "deletelogosociety", { Name:y }).then((succ) => {
+    if (succ.data == "Deleted") {
+      // alert('Deleted');
+      swal("Data Deleted", "", "warning");
+      getdata();
+    }
+  });
+  }
+});
   }
   function del1(x) {
-    // alert(x);
+    swal({
+      title: "Deletion Confirmation",
+      text: "Are you sure you want to delete?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+        if (willDelete) {
     axios.post(uri + "deletedept", { id: x }).then((succ) => {
-      if (succ.data == "Deleted") {
-        // alert('Deleted');
+      if (succ.data == "Deleted"){ 
         swal("Data Deleted", "", "warning");
         getdata1();
       }
     });
-  }
+      }
+      });
+    }
 
   function viewmember(x) {
     var path = '/Members?q='+x;
@@ -115,14 +149,22 @@ export default function Deptadmin() {
 
 
   return (
-    <div>
+    <div className="set ">
       <Sidebaradmin />
       <Navbar />
-      <div className="department">
+     
+      <div className="department  ">
         <div className="modal fade" id="mymodal" role="dialog">
           <div className="modal-dialog modal-md">
             <div className="modal-content ">
               <div className="modal-body deptfrm">
+              <button 
+                      type="button"
+                      className="btn btn-danger closd cross"
+                      data-dismiss="modal"
+                    >
+                      X
+                    </button>
                 <form onSubmit={handleform1}>
                   <div className="form-group frms">
                     <h3 style={{ fontWeight: "bold", textAlign: "center" }}>
@@ -180,6 +222,13 @@ export default function Deptadmin() {
           <div className="modal-dialog modal-md ">
             <div className="modal-content">
               <div className="modal-body deptfrm">
+              <button 
+                      type="button"
+                      className="btn btn-danger closd cross"
+                      data-dismiss="modal"
+                    >
+                      X
+                    </button>
                 <form onSubmit={handleform}>
                   <div className="form-group frms">
                     <h3 style={{ fontWeight: "bold", textAlign: "center" }}>
@@ -227,7 +276,7 @@ export default function Deptadmin() {
                         <td>{row.Department}</td>
                         <td>
                           <button
-                            onClick={() => del1(row._id)}
+                            onClick={() => del1(row._id) }
                             className="btn btn-danger"
                           >
                             <span className="glyphicon glyphicon-trash"></span>
@@ -243,22 +292,20 @@ export default function Deptadmin() {
         </div>
 
         <div className="container-fluid deptadmin">
-          <div className="col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
+          <div className="col-lg-10 col-md-10 col-sm-9 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-3 col-xs-offset-0 marge2 ">
             <div className="bts">
               <span>
                 <button
                   className="btn btnn btn-info btndep"
                   data-toggle="modal"
-                  data-target="#mymodal1"
-                >
+                  data-target="#mymodal1">
                   <span className="glyphicon glyphicon-plus"></span> Add New
                   Department{" "}
                 </button>
                 <button
                   className="btn btnn btn-info add"
                   data-toggle="modal"
-                  data-target="#mymodal"
-                >
+                  data-target="#mymodal">
                   <span className="glyphicon glyphicon-plus"></span> Add New
                   Society
                 </button>
@@ -272,8 +319,9 @@ export default function Deptadmin() {
                     <th>S no.</th>
                     <th>Department Name</th>
                     <th>Society Name</th>
-                    <th>Edit/Delete</th>
+                    <th>Add</th>
                     <th>View Members</th>
+                    <th>Delete</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -284,21 +332,21 @@ export default function Deptadmin() {
                       <td>{row.Society}</td>
                       <td>
                         <div className="btn-group">
-                        <button onClick={() => viewmember(row._id)} className="btn btn-success">
+                        <button onClick={() => viewmember(row._id)} className="btn btn-success ">
                             Our Members
                           </button>
-                          <button
-                            onClick={() => del(row._id)}
-                            className="btn btn-danger"
-                          >
-                            <span className="glyphicon glyphicon-trash"></span>
-                          </button>
-                          
-                        </div>
-                      </td>
+                          </div>
+                          </td>
                       <td><button onClick={() => view(row._id)} className="btn btn-info">
                            View
                           </button></td>
+                          <td>
+                          <button
+                            onClick={() => del(row._id , row.Society)}
+                            className="btn btn-danger">
+                            <span className="glyphicon glyphicon-trash"></span>
+                          </button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -307,6 +355,7 @@ export default function Deptadmin() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+
   );
 }

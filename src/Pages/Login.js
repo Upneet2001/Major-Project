@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Mainnavbar from "./MainNavbar";
+// import swal from 'sweetalert';
+import Swal from "sweetalert2";
 
 export default function Login() {
   var uri = "http://localhost:1200/";
@@ -15,39 +17,64 @@ export default function Login() {
       CRN: data.get("rollno"),
       Password: data.get("password"),
     };
-    axios.post(uri + "Loginstudent", obj).then((succ) => {
-      console.log(succ.data);
-      if (succ.data._id) {
-        console.log("yes");
-        localStorage.setItem("Studentlogin", succ.data._id);
-        navi("/Dashboardstudent");
-      } else {
-        console.log("no");
-        alert("Wrong CRN or Password");
-      }
-    });
+    if(obj){
+      axios.post(uri + "Loginstudent1", obj).then((succ) => {
+        console.log(succ.data);
+        if (succ.data._id) {
+          // alert("You cannot Login as not approved by admin yet!");
+          Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            titleText: 'Your Registration is underprocess. Try again Later!',
+            showConfirmButton: false,
+            timer: 4000
+          })
+        } else {
+          axios.post(uri + "Loginstudent", obj).then((succ) => {
+            console.log(succ.data);
+            if (succ.data._id) {
+              console.log("yes");
+              localStorage.setItem("Studentlogin", succ.data._id);
+              navi("/StudHome");
+            } else {
+              console.log("no");
+              // alert("The CRN or password you entered did not match our records.             Please re-check or Register Yourself!" );
+              Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                titleText: 'The CRN or Password you entered did not match our records. Please re-check or Register Yourself!',
+                showConfirmButton: false,
+                timer: 4000
+              })
+            }
+          });
+        }
+      });
+      
+    }
   }
+  
   const [show, setshow] = useState(true);
+ 
+
 
   return (
-    <div>
+    <div className="Home">
       <Mainnavbar />
       <div className="main">
         <div className="container-fluid log">
-          <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 frm">
+          <div className="col-lg-4 col-md-4 col-sm-8 col-xs-12 frm">
             <div className="img">
-              <img src="img1.jpg" className="img-responsive imgs" />
+              <img src="imge.jpeg" className="img-responsive imf" />
             </div>
             <center>
               <form
                 className="col-lg-offset-1 col-md-offset-1 col-sm-offset-0 col-xs-offset-0 col-lg-10 col-md-10 col-sm-12 col-xs-12 login"
-                onSubmit={handleform}
-              >
-                <h1 className="text">Login</h1>
+                onSubmit={handleform}>
+                <p className="text">Login</p>
                 <h4 className="plz">
                   Please Enter Your Roll no. and Password!
                 </h4>
-                <br />
 
                 <div className="form-group frms">
                   <div className="input-group ">
@@ -58,6 +85,8 @@ export default function Login() {
                       type={"text"}
                       name="rollno"
                       placeholder="College Roll no."
+                      pattern="[0-9]{7}"
+                      title="Please Enter Digits Only"
                       className="form-control"
                       required
                     />

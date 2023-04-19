@@ -22,6 +22,28 @@ import SocDashboard from "./Pages/SocDashboard";
 import Viewmembers from "./Pages/Viewmembers";
 import Applysoc from "./Pages/Applysoc";
 import Dashboardstudent from "./Pages/Dashboardstudent";
+import Chat from "./Pages/Chat";
+import Viewevents from "./Pages/Viewevents";
+import Socabout from "./Pages/Socabout";
+import Home from "./Pages/Home";
+import Registeredlist from "./Pages/Registeredlist";
+import Aboutupdate from "./Pages/Aboutupdate";
+import Socviewmem from "./Pages/Socviewmem";
+import Viewfeedback from "./Pages/Viewfeedback";
+import StudHome from "./Pages/StudHome";
+import Studsoc from "./Pages/Studsoc";
+import Studevent from "./Pages/Studevent";
+import Footer from "./Pages/Footer";
+import Currentevent from "./Pages/Currentevent";
+import Currentsoc from "./Pages/Currentsoc";
+import Currentnav from "./Pages/Currentnav";
+import Soccurrent from "./Pages/Soccurrent";
+import Socevent from "./Pages/Socevent";
+import Curmembers from "./Pages/Curmembers";
+import Feedback from "./Pages/Feedback";
+import Eventregistrations from "./Pages/Eventregistrations";
+import Infoupdate from "./Pages/Infoupdate";
+import Multiple from "./Multiple";
 function App() {
   return (
     <div>
@@ -46,6 +68,30 @@ function App() {
           <Route path="/Viewmembers" element={<Viewmembers />} />
           <Route path="/Applysoc" element={<Applysoc />} />
           <Route path="/Dashboardstudent" element={<Dashboardstudent />} />
+          <Route path="/Chat" element={<Chat/>} />
+          <Route path="/Viewevents" element={<Viewevents/>} />
+          <Route path="/Socabout" element={<Socabout/>} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/Registeredlist" element={<Registeredlist/>} />
+          <Route path="/Aboutupdate" element={<Aboutupdate/>} />
+          <Route path="/Socviewmem" element={<Socviewmem/>} />
+          <Route path="/Viewfeedback"  element={<Viewfeedback/>}/>
+          <Route path="/StudHome"  element={<StudHome/>}/>
+          <Route path="/Studevent"  element={<Studevent/>}/>
+          <Route path="/Studsoc"  element={<Studsoc/>}/>
+          <Route path="/Footer"  element={<Footer/>}/>
+          <Route path="/Currentevent"  element={<Currentevent/>}/>
+          <Route path="/Currentsoc"  element={<Currentsoc/>}/>
+          <Route path="/Currentnav"  element={<Currentnav/>}/>
+          <Route path="/Soccurrent"  element={<Soccurrent/>}/>
+          <Route path="/Socevent"  element={<Socevent/>}/>
+          <Route path="/Curmembers"  element={<Curmembers/>}/>
+          <Route path="/Feedback"  element={<Feedback/>}/>
+          <Route path="/Eventregistrations"  element={<Eventregistrations/>}/>
+          <Route path="/Infoupdate"  element={<Infoupdate/>}/>
+          <Route path="/Multiple"  element={<Multiple/>}/>
+
+
         </Routes>
       </Router>
     </div>

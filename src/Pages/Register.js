@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import swal from 'sweetalert';
+import Mainnavbar from "./MainNavbar";
 
 
 
@@ -23,7 +24,7 @@ export default function Register() {
             Branch: data.get('departmentname'),
             Semester: data.get('sem'),
             Gender: data.get('gender'),
-            Status: "0",
+            Status: "Pending",
             Date: dtes.getDate()+'-'+(dtes.getMonth()+1)+'-'+(dtes.getFullYear()),
         }
         axios.post(uri+'AddUser', obj).then((succ) => {
@@ -71,7 +72,8 @@ export default function Register() {
     }
     const [show, setshow] = useState(true);
     return (
-        <>
+        <div className="Home1">
+            <Mainnavbar/>
          <div className="main"> 
         <div className="container-fluid regi">
             <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12 register">
@@ -82,7 +84,7 @@ export default function Register() {
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 reg">
             <center>
             <form className=" col-lg-10 col-md-10 col-sm-12 col-xs-12 login" onSubmit={handleform}>
-                <h3 className="text2">Registration for Society</h3>
+                <h3 className="text2">Registration</h3>
             <div className="form-group frms">
             <div className="input-group">
              <span className="input-group-addon glycol"><i className="glyphicon glyphicon-user"></i></span> 
@@ -105,7 +107,7 @@ export default function Register() {
                         name="rollno"
                         placeholder="College Roll no."
                         className="form-control" 
-                        pattern="[0-9]+"
+                        pattern="[0-9]{7}"
                         title="Please Enter Digits Only"
                         required />
             </div>
@@ -158,12 +160,13 @@ export default function Register() {
             <div className="form-group frms">
             <div className="input-group">
              <span className="input-group-addon glycol"><i className="glyphicon glyphicon-user"></i></span>
-             <select
+             <select isMulti options
                         name="gender" 
                         className="form-control" required>
                             <option value="" disabled selected hidden>Select Gender</option>
                         <option>Male</option>
                         <option>Female</option>
+                        <option>Others</option>
                     </select>
                     </div>
             </div>
@@ -203,7 +206,6 @@ export default function Register() {
 </div>
 </div>
 </div>
-
-        </>
+</div>
     )
 }

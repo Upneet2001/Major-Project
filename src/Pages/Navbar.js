@@ -25,8 +25,8 @@ function logout(){
 }
 
   return (
-    <div className="pad-0">
-      <div className="col-lg-10 col-xs-10 right_col pad-0">
+    <div className="pad-0 pad-2 ">
+      <div className="col-lg-10 col-lg-md-10 col-sm-9 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-3 col-xs-offset-0 right_col pad-0">
         {/* <!-- top navigation --> */}
         <div className="navbar navbar-default navi">
           <div className="container-fluid">

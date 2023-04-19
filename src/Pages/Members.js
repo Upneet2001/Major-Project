@@ -5,9 +5,7 @@ import Navbar from "./Navbar";
 import Sidebaradmin from "./Sidebaradmin";
 import swal from "sweetalert";
 
-
 export default function Departmentadmin() {
-
   var uri = "http://localhost:1200/";
   var navi = useNavigate();
 
@@ -30,38 +28,88 @@ export default function Departmentadmin() {
       ActiveMembers: data.get("activemembers"),
       Executives: data.get("executives"),
     };
-      
-    var a =[obj.Coordinator, obj.Cocoordinator, obj.Pro, obj.Databaseandtech,  obj.Discipline, obj.Event, obj.Tech,
-        obj.Socialmedia, obj.Creative, obj.Content, obj.ActiveMembers, obj.Executives];
-        //console.log(a);
-        var x=0;
-      for (var i = 0; i < a.length; i++) {
-        for (var k = i + 1; k < a.length; k++) {
-            if (a[i] == a[k]) {
-              // console.log(a[i]);
-              // console.log(a[k]);
-              //console.log("no");
-              x++;
-            }
-            else{
-              console.log("pass");
-            }
-        }
-    }
-    console.log(x);
-    if(x==0){
-      axios.post(uri + "Addmember", obj).then((succ) => {
-          if (succ.data == "ok") {
-            swal("Data Added", "", "success");
-            e.target.reset();
-            getdata();
-          }
-        });
-    }
-    else{
-      swal("Every Designation must have unique candidate", "", "warning");
-    }
+    axios.post(uri + "Addmember", obj).then((succ) => {
+      if (succ.data == "ok") {
+        swal("Data Added", "", "success");
+        getdata();
+ console.log(obj.Coordinator);
+    var a =  obj.Coordinator.split(' (');
+    var b =  obj.Cocoordinator.split(' (');
+    var c =  obj.Pro.split(' (');
+    var d =  obj.Databaseandtech.split(' (');
+    var f =  obj.Discipline.split(' (');
+    var g =  obj.Event.split(' (');
+    var h =  obj.Tech.split(' (');
+    var i =  obj.Socialmedia.split(' (');
+    var j =  obj.Creative.split(' (');
+    var k =  obj.Content.split(' (');
+    var l =  obj.ActiveMembers.split(' (');
+    var m =  obj.Executives.split(' (');
+    console.log(a);
+     
+      axios.post(uri + "updatesocstatus", { Name: a[0], Soc:dep }).then((succ) => {
+      if (succ.data == "updated") {
+        swal("Data Updated", "", "success");
+      }
+    })
+    axios.post(uri + "updatesocstatus1", { Name: b[0], Soc:dep }).then((succ) => {
+      if (succ.data == "updated") {
+        swal("Data Updated", "", "success");
+      }
+    })
+    axios.post(uri + "updatesocstatus2", { Name: c[0], Soc:dep }).then((succ) => {
+      if (succ.data == "updated") {
+        swal("Data Updated", "", "success");
+      }
+    })
+    axios.post(uri + "updatesocstatus3", { Name: d[0], Soc:dep }).then((succ) => {
+      if (succ.data == "updated") {
+        swal("Data Updated", "", "success");
+      }
+    })
+    axios.post(uri + "updatesocstatus4", { Name: f[0], Soc:dep }).then((succ) => {
+      if (succ.data == "updated") {
+        swal("Data Updated", "", "success");
+      }
+    })
+    axios.post(uri + "updatesocstatus5", { Name: g[0], Soc:dep }).then((succ) => {
+      if (succ.data == "updated") {
+        swal("Data Updated", "", "success");
+      }
+    })
+    axios.post(uri + "updatesocstatus6", { Name: h[0], Soc:dep }).then((succ) => {
+      if (succ.data == "updated") {
+        swal("Data Updated", "", "success");
+      }
+    })
+    axios.post(uri + "updatesocstatus7", { Name: i[0], Soc:dep }).then((succ) => {
+      if (succ.data == "updated") {
+        swal("Data Updated", "", "success");
+      }
+    })
+    axios.post(uri + "updatesocstatus8", { Name: j[0], Soc:dep }).then((succ) => {
+      if (succ.data == "updated") {
+        swal("Data Updated", "", "success");
+      }
+    })
+    axios.post(uri + "updatesocstatus9", { Name: k[0], Soc:dep }).then((succ) => {
+      if (succ.data == "updated") {
+        swal("Data Updated", "", "success");
+      }
+    })
+    axios.post(uri + "updatesocstatus10", { Name: l[0], Soc:dep }).then((succ) => {
+      if (succ.data == "updated") {
+        swal("Data Updated", "", "success");
+      }
+    })
+    axios.post(uri + "updatesocstatus11", { Name: m[0], Soc:dep }).then((succ) => {
+      if (succ.data == "updated") {
+        swal("Data Updated", "", "success");
+      }
+    })
   }
+})
+}
 
   var id = new URLSearchParams(window.location.search).get("q");
 
@@ -83,7 +131,7 @@ export default function Departmentadmin() {
 
   const [data, setdata] = useState([]);
   function getdata() {
-    axios.post(uri + "getmember", { Dep: dep }).then((succ) => {
+    axios.post(uri + "getmember1", { Dep: dep }).then((succ) => {
       setdata(succ.data);
       console.log(succ.data);
     });
@@ -99,20 +147,22 @@ export default function Departmentadmin() {
       <Sidebaradmin />
       <Navbar />
       <div className="dept">
-        <div className="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-          <form className=" col-lg-12  login" onSubmit={handleform}>
-            <div className="text4 container">{name} </div>
-            <div className="text3 container">{dep}  Members:</div>
-            <div className="col-lg-12 members">
+        <div className="col-lg-10 col-md-10 col-sm-9 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-3 col-xs-offset-0 marge2">
+          <form className="login " onSubmit={handleform}>
+            <div className="text4">{name} </div>
+            <div className="text3">{dep} Members:</div>
+            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 members">
               <div className="divide1 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-              <div className="form-group frms">
+                <div className="form-group frms">
                   <label>Coordinator </label>
                   <select name="coordinator" className="form-control">
                     <option value="" disabled selected hidden>
                       Coordinator
                     </option>
                     {data.map((row) => (
-                      <option key={row._id} value={row.CRN}>{row.Name}</option>
+                      <option key={row._id}>
+                        {row.Name} ({row.CRN})
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -123,7 +173,9 @@ export default function Departmentadmin() {
                       Co-Coordinator
                     </option>
                     {data.map((row) => (
-                      <option key={row._id}  value={row.CRN}>{row.Name}</option>
+                      <option key={row._id}>
+                        {row.Name} ({row.CRN})
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -134,7 +186,9 @@ export default function Departmentadmin() {
                       PRO
                     </option>
                     {data.map((row) => (
-                      <option key={row._id}  value={row.CRN}>{row.Name}</option>
+                      <option key={row._id}>
+                        {row.Name} ({row.CRN})
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -145,7 +199,9 @@ export default function Departmentadmin() {
                       Database and Techinician
                     </option>
                     {data.map((row) => (
-                      <option key={row._id}  value={row.CRN}>{row.Name}</option>
+                      <option key={row._id}>
+                        {row.Name} ({row.CRN})
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -157,7 +213,9 @@ export default function Departmentadmin() {
                       Discipline
                     </option>
                     {data.map((row) => (
-                      <option key={row._id}  value={row.CRN}>{row.Name}</option>
+                      <option key={row._id}>
+                        {row.Name} ({row.CRN})
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -165,12 +223,14 @@ export default function Departmentadmin() {
                 <div className="form-group frms">
                   <label>Event Management</label>
 
-                  <select name="event" className="form-control" required>
+                  <select name="event" className="form-control">
                     <option value="" disabled selected hidden>
                       Event Management
                     </option>
                     {data.map((row) => (
-                      <option key={row._id}  value={row.CRN}>{row.Name}</option>
+                      <option key={row._id}>
+                        {row.Name} ({row.CRN})
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -184,7 +244,9 @@ export default function Departmentadmin() {
                       Tech Team
                     </option>
                     {data.map((row) => (
-                      <option key={row._id}  value={row.CRN}>{row.Name}</option>
+                      <option key={row._id}>
+                        {row.Name} ({row.CRN})
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -196,7 +258,9 @@ export default function Departmentadmin() {
                       Social Media
                     </option>
                     {data.map((row) => (
-                      <option key={row._id}  value={row.CRN}>{row.Name}</option>
+                      <option key={row._id}>
+                        {row.Name} ({row.CRN})
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -208,36 +272,38 @@ export default function Departmentadmin() {
                       Creative
                     </option>
                     {data.map((row) => (
-                      <option key={row._id}  value={row.CRN}>{row.Name}</option>
+                      <option key={row._id}>
+                        {row.Name} ({row.CRN})
+                      </option>
                     ))}
                   </select>
                 </div>
                 <div className="form-group frms">
                   <label>Content </label>
 
-                  <select name="content" className="form-control" required>
+                  <select name="content" className="form-control">
                     <option value="" disabled selected hidden>
                       Content
                     </option>
                     {data.map((row) => (
-                      <option key={row._id}  value={row.CRN}>{row.Name}</option>
+                      <option key={row._id}>
+                        {row.Name} ({row.CRN})
+                      </option>
                     ))}
                   </select>
                 </div>
                 <div className="form-group frms">
                   <label>Active Members </label>
 
-                  <select
-                    name="activemembers"
-                    className="form-control"
-                    required
-                  >
+                  <select name="activemembers" className="form-control">
                     <option value="" disabled selected hidden>
                       Active Members
                     </option>
                     {data.map((row) => (
-                      <option key={row._id}  value={row.CRN}>{row.Name}</option>
-                      ))}
+                      <option key={row._id}>
+                        {row.Name} ({row.CRN})
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div className="form-group frms">
@@ -248,12 +314,13 @@ export default function Departmentadmin() {
                       Executives
                     </option>
                     {data.map((row) => (
-                      <option key={row._id}  value={row.CRN}>{row.Name}</option>
+                      <option key={row._id}>
+                        {row.Name} ({row.CRN})
+                      </option>
                     ))}
                   </select>
                 </div>
-              
-            
+
                 <div className="form-group">
                   <input
                     type={"submit"}
@@ -269,3 +336,33 @@ export default function Departmentadmin() {
     </div>
   );
 }
+
+// var a = [
+    //   obj.Coordinator,
+    //   obj.Cocoordinator,
+    //   obj.Pro,
+    //   obj.Databaseandtech,
+    //   obj.Discipline,
+    //   obj.Event,
+    //   obj.Tech,
+    //   obj.Socialmedia,
+    //   obj.Creative,
+    //   obj.Content,
+    //   obj.ActiveMembers,
+    //   obj.Executives,
+    // ];
+    //console.log(a);
+   // var x = 0;
+    //   for (var i = 0; i < a.length; i++) {
+    //     for (var k = i + 1; k < a.length; k++) {
+    //         if((a[i] == a[k])) {
+    //           // console.log(a[i]);
+    //           // console.log(a[k]);
+    //           //console.log("no");
+    //           x++;
+    //         }
+    //         else{
+    //           console.log("pass");
+    //         }
+    //   }
+    // }
